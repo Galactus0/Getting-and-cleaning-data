@@ -30,7 +30,7 @@ activity_1 <- activity_path %>% map_df(~read.table(.x))
 data <- mutate(data, subject_id = subject$V1, .before = 1)
 data <- mutate(data, activity = activity_1$V1, .before = 1)
 ## changing the activity id into descriptive names
-data <- data %>% mutate(activity_id = recode(activity_id,
+data <- data %>% mutate(activity = recode(activity,
                            `1` = "Walking",
                            `2` = "Walking_Upstairs",
                            `3` = "Walking_Downstairs",
